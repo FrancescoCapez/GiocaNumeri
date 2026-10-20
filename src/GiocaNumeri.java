@@ -28,7 +28,7 @@ public class GiocaNumeri {
             try{
                 tg1.join();
             } catch (InterruptedException e) {
-                System.err.println("Errore di transizione da RUNNING a WAITING ")
+                System.err.println("Errore di transizione da RUNNING a WAITING ");
             }
             System.out.println("FINE");
         } catch (InterruptedException ex) {
