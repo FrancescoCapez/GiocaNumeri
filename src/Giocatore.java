@@ -6,11 +6,13 @@ import java.util.logging.Logger;
  * @author Studenti
  */
 public class Giocatore implements Runnable {
+    private final Cifratura cifratura;
     String nome;
     int punteggio;
 
-    public Giocatore(String nome){
+    public Giocatore(String nome, Cifratura cifratura){
         this.nome= nome;
+        this.cifratura=cifratura;
     }
 
     @Override
@@ -19,10 +21,13 @@ public class Giocatore implements Runnable {
     }
 
     public void gioca(){
-        int numero = 10;
+        int numero = 3;
         Long tempoInizio = System.currentTimeMillis();
 
         String parola = "buongiorno";
+
+        String parolaCifrata = cifratura.cifra(parola);
+        System.out.println("parola cifrata: "+ parolaCifrata);
         punteggio = 100;
 
         System.out.println("giocatore: "+ nome);
@@ -36,7 +41,7 @@ public class Giocatore implements Runnable {
             }
         }
 
-        System.out.println("Giocatore "+nome +" punteggio: "+punteggio + "Parola " + parola);
+        System.out.println("Giocatore "+nome +" punteggio: "+punteggio + "Parola " + cifratura.decifra(parolaCifrata));
         Long tempoFine = System.currentTimeMillis();
         System.out.println("Giocatore: " + nome +"Tempo: "+ (tempoFine - tempoInizio) /1000);
     }

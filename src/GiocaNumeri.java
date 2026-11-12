@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,14 +10,15 @@ public class GiocaNumeri {
 
     public static void main(String[] args){
         try {
+            Cifratura cifratura = new Cifratura();
             System.out.println("INIZIO");
-            Giocatore g1 = new Giocatore("Francesca");
+            Giocatore g1 = new Giocatore("Francesca", cifratura);
             Thread tg1 = new Thread(g1);
             tg1.start();
 
             Thread.currentThread().sleep(5000);
 
-            Giocatore g2 = new Giocatore("Milena");
+            Giocatore g2 = new Giocatore("Milena", cifratura);
             Thread tg2 = new Thread(g2);
             tg2.start();
 
