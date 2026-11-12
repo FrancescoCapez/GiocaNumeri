@@ -3,7 +3,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Studenti
+ * @author Capezzali Francesco
  */
 public class Giocatore implements Runnable {
     private final Cifratura cifratura;
