@@ -4,6 +4,7 @@
  * Supporta sia lettere minuscole che maiuscole, lasciando inalterati gli altri caratteri.
  *
  * @author Capezzali Francesco
+ * @see gemini.google.com/app/5451da8294c1cba0?hl=it#b465f733a5057325
  */
 public class Cifratura {
 

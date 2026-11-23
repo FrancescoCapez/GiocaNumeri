@@ -8,10 +8,12 @@ import java.util.logging.Logger;
 public class Giocatore implements Runnable {
     private final Cifratura cifratura;
     String nome;
+    String parola;
     int punteggio;
 
-    public Giocatore(String nome, Cifratura cifratura){
+    public Giocatore(String nome,String parola, Cifratura cifratura){
         this.nome= nome;
+        this.parola= parola;
         this.cifratura=cifratura;
     }
 
@@ -23,11 +25,13 @@ public class Giocatore implements Runnable {
     public void gioca(){
         int numero = 3;
         Long tempoInizio = System.currentTimeMillis();
-
-        String parola = "buongiorno";
+        //inserire parola da tastiera
+        //inserire nome giocatore da tastiera
 
         String parolaCifrata = cifratura.cifra(parola);
         System.out.println("parola cifrata: "+ parolaCifrata);
+        //scrivere su un file numero punteggio e parola cifrata (id.giocatore-gioco del dataoggi .txt)
+
         punteggio = 100;
 
         System.out.println("giocatore: "+ nome);
