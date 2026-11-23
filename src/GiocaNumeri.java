@@ -3,7 +3,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Francesco Capezzali
  */
 public class GiocaNumeri {

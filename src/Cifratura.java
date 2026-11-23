@@ -63,13 +63,13 @@ public class Cifratura {
         for (int i = 0; i < parolaCifrata.length(); i++) {
             char c = parolaCifrata.charAt(i);
 
-            // Gestione delle lettere maiuscole (A-Z)
+            // Gestione delle lettere maiuscole(A-Z)
             if (c >= 'A' && c <= 'Z') {
                 // Aggiungiamo 26 prima del modulo per evitare risultati negativi in Java
                 char decifrato = (char) ('A' + (c - 'A' - SPOSTAMENTO + 26) % 26);
                 risultato.append(decifrato);
             }
-            // Gestione delle lettere minuscole (a-z)
+            // Gestione delle lettere minuscole(a-z)
             else if (c >= 'a' && c <= 'z') {
                 char decifrato = (char) ('a' + (c - 'a' - SPOSTAMENTO + 26) % 26);
                 risultato.append(decifrato);

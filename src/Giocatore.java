@@ -2,7 +2,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Capezzali Francesco
  */
 public class Giocatore implements Runnable {
