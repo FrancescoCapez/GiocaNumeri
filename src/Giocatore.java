@@ -2,15 +2,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Studenti
+ * @author Capezzali Francesco
  */
 public class Giocatore implements Runnable {
+    private final Cifratura cifratura;
     String nome;
+    String parola;
     int punteggio;
 
-    public Giocatore(String nome){
+    public Giocatore(String nome,String parola, Cifratura cifratura){
         this.nome= nome;
+        this.parola= parola;
+        this.cifratura=cifratura;
     }
 
     @Override
@@ -19,10 +22,15 @@ public class Giocatore implements Runnable {
     }
 
     public void gioca(){
-        int numero = 10;
+        int numero = 3;
         Long tempoInizio = System.currentTimeMillis();
+        //inserire parola da tastiera
+        //inserire nome giocatore da tastiera
 
-        String parola = "buongiorno";
+        String parolaCifrata = cifratura.cifra(parola);
+        System.out.println("parola cifrata: "+ parolaCifrata);
+        //scrivere su un file numero punteggio e parola cifrata (id.giocatore-gioco del dataoggi .txt)
+
         punteggio = 100;
 
         System.out.println("giocatore: "+ nome);
@@ -36,7 +44,7 @@ public class Giocatore implements Runnable {
             }
         }
 
-        System.out.println("Giocatore "+nome +" punteggio: "+punteggio + "Parola " + parola);
+        System.out.println("Giocatore "+nome +" punteggio: "+punteggio + " Parola " + cifratura.decifra(parolaCifrata));
         Long tempoFine = System.currentTimeMillis();
         System.out.println("Giocatore: " + nome +"Tempo: "+ (tempoFine - tempoInizio) /1000);
     }
