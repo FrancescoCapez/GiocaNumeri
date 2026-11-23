@@ -45,7 +45,7 @@ public class Giocatore implements Runnable {
             }
         }
 
-        System.out.println("Giocatore "+nome +" punteggio: "+punteggio + "Parola " + cifratura.decifra(parolaCifrata));
+        System.out.println("Giocatore "+nome +" punteggio: "+punteggio + " Parola " + cifratura.decifra(parolaCifrata));
         Long tempoFine = System.currentTimeMillis();
         System.out.println("Giocatore: " + nome +"Tempo: "+ (tempoFine - tempoInizio) /1000);
     }
